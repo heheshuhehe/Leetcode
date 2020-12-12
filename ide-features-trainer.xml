@@ -1,0 +1,47 @@
+<application>
+  <component name="GroupManager">
+    <expandedByName>
+      <entry name="Tutorials" expanded="true" />
+      <entry name="Projects" expanded="true" />
+    </expandedByName>
+  </component>
+  <component name="LangManager">
+    <option name="languageName" value="JAVA" />
+    <option name="languageToProjectMap">
+      <map>
+        <entry key="JAVA" value="$USER_HOME$/IdeaProjects/interview/LearnProject" />
+      </map>
+    </option>
+  </component>
+  <component name="LessonStateBase">
+    <option name="map">
+      <map>
+        <entry key="actions" value="NOT_PASSED" />
+        <entry key="basic completion" value="NOT_PASSED" />
+        <entry key="codeassistance.codeformatting" value="NOT_PASSED" />
+        <entry key="codeassistance.editorcodingassistance" value="NOT_PASSED" />
+        <entry key="codeassistance.parameterinfo" value="NOT_PASSED" />
+        <entry key="codeassistance.quickpopups" value="NOT_PASSED" />
+        <entry key="collapse" value="NOT_PASSED" />
+        <entry key="comment line" value="PASSED" />
+        <entry key="completion with tab" value="NOT_PASSED" />
+        <entry key="duplicate" value="PASSED" />
+        <entry key="move" value="NOT_PASSED" />
+        <entry key="multiple selections" value="NOT_PASSED" />
+        <entry key="navigation.declaration/implementation" value="NOT_PASSED" />
+        <entry key="navigation.filestructure" value="NOT_PASSED" />
+        <entry key="navigation.jumptosource" value="NOT_PASSED" />
+        <entry key="navigation.next/previousoccurrences" value="NOT_PASSED" />
+        <entry key="postfix completion" value="NOT_PASSED" />
+        <entry key="refactorings.extractmethod" value="NOT_PASSED" />
+        <entry key="refactorings.extractvariable/field" value="NOT_PASSED" />
+        <entry key="refactorings.refactoringbasics" value="NOT_PASSED" />
+        <entry key="refactorings.rename" value="NOT_PASSED" />
+        <entry key="select" value="NOT_PASSED" />
+        <entry key="smart type completion" value="NOT_PASSED" />
+        <entry key="statement completion" value="NOT_PASSED" />
+        <entry key="surround and unwrap" value="NOT_PASSED" />
+      </map>
+    </option>
+  </component>
+</application>
