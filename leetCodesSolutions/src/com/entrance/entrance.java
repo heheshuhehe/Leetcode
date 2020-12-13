@@ -14,7 +14,6 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println(System.getProperty("user.dir"));
         String testString = readFileByChars("005.txt");
         Solution solution = new Solution();
         System.out.println("the result of 005 is "+solution.longestPalindrome(testString));
