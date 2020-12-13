@@ -3,7 +3,7 @@ package com.Solution005;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution {
+public class Solution2 {
     public String longestPalindrome(String s) {
         String result = "";
         int maxLength = 1;
@@ -14,7 +14,7 @@ public class Solution {
             sIndex= mIndex;
             currentLength=0;
             for (int mTailIndex = s.length()-1;mTailIndex>=mIndex;mTailIndex--) {
-                for (int sTailIndex = mTailIndex; sTailIndex >= sIndex; sTailIndex--) {
+                for (int sTailIndex = mTailIndex; sTailIndex >= sTailIndex; sTailIndex--) {
                     if (s.charAt(sIndex) == s.charAt(mTailIndex)) {
                         currentLength += (sIndex == mTailIndex ? 1 : 2);
                         sIndex++;
@@ -22,8 +22,8 @@ public class Solution {
                         currentLength = 0;
                         sIndex = mIndex;
                     }
-                    System.out.println("currentLength is " + currentLength + ", mIndex is " + mIndex + ", sIndex is " + (sIndex == maxIndex ? mIndex : sIndex - 1) + ", sTailIndex is " + sTailIndex +
-                            ", chars are "+s.charAt(sIndex == mIndex ? mIndex : sIndex - 1)+","+s.charAt(sTailIndex)+",String is " + s.substring(sIndex == mIndex ? mIndex : sIndex - 1, mTailIndex));
+                    System.out.println("currentLength is " + currentLength + ", mIndex is " + mIndex + ", sIndex is " + (sIndex == maxIndex ? mIndex : sIndex - 1) + ", mTailIndex is " + mTailIndex +
+                            ",String is " + s.substring(sIndex == maxIndex ? mIndex : sIndex - 1, mTailIndex));
                 }
             }
             if ( currentLength > maxLength)  {
