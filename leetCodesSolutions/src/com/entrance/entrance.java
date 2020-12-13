@@ -12,10 +12,10 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) {
-        String testString = readFileByChars("003.txt");
-        System.out.println("the result of readFileByChar is "+testString);
-        Solution002 solution = new Solution002(testString);
-        System.out.println("The solution of the problem is " +  new Solution002(testString));
+        //String testString = readFileByChars("002.txt");
+      //  System.out.println("the result of readFileByChar is "+testString);
+        Solution002 solution = new Solution002("002.txt");
+//        System.out.println("The solution of the problem is " +  new Solution002(testString));
     }
 
 
