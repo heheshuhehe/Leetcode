@@ -1,8 +1,8 @@
-package com.entrance;
+package com.Solutions;
 
 import java.util.List;
 
-class Solution {
+public class Solution003 {
     public int lengthOfLongestSubstring(String s) {
         String recieverString = s;
         String currentString ="";
