@@ -38,24 +38,67 @@ public class Solution002 {
             list2 = list2.next;
         }
         previousNode.next=null;
-
-//        while (this.list1 != null) {
-//            System.out.println("list1.val is " + this.list1.val);
-//            this.list1 = this.list1.next;
-//        }
-//
-//        while (this.list2 != null) {
-//            System.out.println("list2.val is " + this.list2.val);
-//            this.list2 = this.list2.next;
-//        }
-        this.addTwoNumbers(list1,list2);
+        printLinkedList(this.list1);
+        printLinkedList(this.list2);
+        this.addTwoNumbers(this.list1,this.list2);
     }
 
+    /**
+     *
+     * @param l1, listNode1
+     * @param l2, listNode2
+     * @return
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        int l1Num = l1.val;
+        int l2Num = l2.val;
+        int sum = l1Num+l2Num;
+        int carry = 0;
+        ListNode resultListNode = new ListNode();
+        ListNode result = resultListNode;
 
-        while (l1!=null ||l1 !=null){
+        while (l1!=null || l2 !=null || carry>0){
+            if (l1!=null){
+                l1Num=l1.val;
+                l1=l1.next;
+                System.out.println("l1 is "+l1Num);
+            }else {
+                l1Num=0;
+            }
+            if (l2!=null){
+                l2Num=l2.val;
+                l2=l2.next;
+                System.out.println("l2 is "+l2Num);
+            }else {
+                l2Num=0;
+            }
+
+            sum = (l1Num+l2Num+carry);
+            resultListNode.val=sum%10;
+            System.out.println("sum is "+sum);
+            carry = sum>= 10 ? 1:0;
+            sum=0;
+            if (l1 == null && l2 == null && carry == 0) {
+                resultListNode.next=null;
+                break;
+            }else {
+                resultListNode.next= new ListNode(-1);
+                resultListNode=resultListNode.next;
+            }
 
         }
-        return null;
+        System.out.print("the result is ");printLinkedList(result);
+        return result;
     }
+
+    public void printLinkedList (ListNode linkedList){
+        ListNode printListNode = Optional.ofNullable(linkedList).orElse(new ListNode());
+        StringBuilder toPrint = new StringBuilder("");
+        while (printListNode!=null){
+            toPrint.append(printListNode.val==-1?"bad end":printListNode.val+", ");
+            printListNode=printListNode.next;
+        }
+        System.out.println(toPrint);
+    }
+
 }
