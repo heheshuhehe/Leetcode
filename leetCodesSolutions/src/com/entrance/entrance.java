@@ -3,6 +3,7 @@ package com.entrance;
 import com.Solution002.Solution002;
 import com.Solution005.Solution;
 import com.Solutions.Solution003;
+import org.jetbrains.annotations.NotNull;
 import util.constants;
 import util.constants.*;
 import java.io.*;
@@ -13,6 +14,7 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) {
+        System.out.println(System.getProperty("user.dir"));
         String testString = readFileByChars("005.txt");
         Solution solution = new Solution();
         System.out.println("the result of 005 is "+solution.longestPalindrome(testString));
@@ -27,8 +29,10 @@ public class entrance {
      * @param fileName
      * @return th content inside the file
      */
-    public static String readFileByChars(String fileName) {
-        String realFilename = constants.TESTCASESPATH+fileName;
+    public static @NotNull
+    String readFileByChars(String fileName) {
+
+        String realFilename = System.getProperty("user.dir")+constants.TESTCASESPATH+fileName;
         File file = new File(realFilename);
         Reader reader = null;
         StringBuilder resultString = new StringBuilder("");
