@@ -31,7 +31,10 @@ public class entrance {
     public static @NotNull
     String readFileByChars(String fileName) {
 
-        String realFilename = System.getProperty("user.dir")+constants.TESTCASESPATH+fileName;
+        System.out.println("path is "+System.getProperty(
+                "user.dir"));
+        String realFilename = System.getProperty(
+                "user.dir")+constants.TESTCASESPATH+fileName;
         File file = new File(realFilename);
         Reader reader = null;
         StringBuilder resultString = new StringBuilder("");
