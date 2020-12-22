@@ -3,7 +3,6 @@ package com.entrance;
 import com.Solution002.Solution002;
 import com.Solution005.Solution;
 import com.Solutions.Solution003;
-import org.jetbrains.annotations.NotNull;
 import util.constants;
 import util.constants.*;
 import java.io.*;
@@ -28,13 +27,14 @@ public class entrance {
      * @param fileName
      * @return th content inside the file
      */
-    public static @NotNull
+    public static
     String readFileByChars(String fileName) {
 
         System.out.println("path is "+System.getProperty(
                 "user.dir"));
         String realFilename = System.getProperty(
                 "user.dir")+constants.TESTCASESPATH+fileName;
+
         File file = new File(realFilename);
         Reader reader = null;
         StringBuilder resultString = new StringBuilder("");
