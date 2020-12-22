@@ -22,8 +22,8 @@ public class Solution {
                         currentLength = 0;
                         sIndex = mIndex;
                     }
-                    System.out.println("currentLength is " + currentLength + ", mIndex is " + mIndex + ", sIndex is " + (sIndex == maxIndex ? mIndex : sIndex - 1) + ", sTailIndex is " + sTailIndex +
-                            ", chars are "+s.charAt(sIndex == mIndex ? mIndex : sIndex - 1)+","+s.charAt(sTailIndex)+",String is " + s.substring(sIndex == mIndex ? mIndex : sIndex - 1, mTailIndex));
+                    System.out.println("currentLength is " + currentLength + ", mIndex is " + mIndex + ", sIndex is " + (sIndex == maxIndex ? mIndex : sIndex ) + ", sTailIndex is " + sTailIndex +
+                            ", chars are "+s.charAt(sIndex == mIndex ? mIndex : sIndex )+","+s.charAt(sTailIndex)+",String is " + s.substring(sIndex == mIndex ? mIndex : sIndex , mTailIndex));
                 }
             }
             if ( currentLength > maxLength)  {
