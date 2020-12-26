@@ -1,10 +1,9 @@
 package com.entrance;
 
-import com.Solution002.Solution002;
 import com.Solution005.Solution;
-import com.Solutions.Solution003;
+import com.Solution042.Solution042;
 import util.constants;
-import util.constants.*;
+
 import java.io.*;
 
 public class entrance {
@@ -13,9 +12,11 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) {
-        String testString = readFileByChars("005.txt");
-        Solution solution = new Solution();
-        System.out.println("the result of 005 is "+solution.longestPalindrome(testString));
+        String testString = readFileByChars("042.txt");
+        Solution042 solution = new Solution042();
+
+        System.out.println("the result of "+solution.getClass().getName()+ " is "
+                +solution.start(testString));
 
 //        System.out.println("The solution of the problem is " +  new Solution002(testString));
     }
