@@ -34,7 +34,7 @@ public class entrance {
         System.out.println("path is "+System.getProperty(
                 "user.dir"));
         String realFilename = System.getProperty(
-                "user.dir")+constants.TESTCASESPATH+fileName;
+                "user.dir")+constants.MACTESTCASESPATH+fileName;
 
         File file = new File(realFilename);
         Reader reader = null;
