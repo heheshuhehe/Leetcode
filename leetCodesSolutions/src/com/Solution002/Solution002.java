@@ -1,7 +1,7 @@
 package com.Solution002;
 
 import com.entrance.entrance;
-
+import com.DataStructure.ListNode;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;

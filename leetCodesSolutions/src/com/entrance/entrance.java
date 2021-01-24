@@ -1,7 +1,7 @@
 package com.entrance;
 
-import com.Solution005.Solution;
 import com.Solution042.Solution042;
+import com.Solution206.Solution;
 import util.constants;
 
 import java.io.*;
@@ -12,9 +12,8 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) {
-        String testString = readFileByChars("042.txt");
-        Solution042 solution = new Solution042();
-
+        String testString = readFileByChars("206.txt");
+        com.Solution206.Solution solution = new com.Solution206.Solution();
         System.out.println("the result of "+solution.getClass().getName()+ " is "
                 +solution.start(testString));
 

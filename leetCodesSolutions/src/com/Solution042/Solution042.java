@@ -15,7 +15,10 @@ public class Solution042 {
         Arrays.sort(sortedHeight);
         System.out.println("sorted height is "+ Arrays.toString(sortedHeight));
         Integer[] hehe= {1,2,3};
-        Arrays.copyOf()
+        try {
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return 0;
     }
