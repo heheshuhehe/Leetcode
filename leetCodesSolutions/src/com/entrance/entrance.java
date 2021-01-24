@@ -1,7 +1,7 @@
 package com.entrance;
 
 import com.Solution042.Solution042;
-import com.Solution206.Solution;
+import com.Solution021.Solution;
 import util.constants;
 
 import java.io.*;
@@ -12,10 +12,10 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) {
-        String testString = readFileByChars("206.txt");
-        com.Solution206.Solution solution = new com.Solution206.Solution();
-        System.out.println("the result of "+solution.getClass().getName()+ " is "
-                +solution.start(testString));
+        String testString = readFileByChars("021.txt");
+        com.Solution021.Solution solution = new com.Solution021.Solution();
+        System.out.println("the result of "+solution.getClass().getName()+ " is ");
+        solution.start(testString);
 
 //        System.out.println("The solution of the problem is " +  new Solution002(testString));
     }

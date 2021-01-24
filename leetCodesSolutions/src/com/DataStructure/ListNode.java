@@ -9,7 +9,7 @@ public class ListNode {
     public ListNode next;
     public ListNode(int val) { this.val = val; }
     public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    public ListNode(){ this.val=-1; this.next=null;}
+    public ListNode(){}
 
     public void setVal(int val) {
         this.val = val;
@@ -46,6 +46,10 @@ public class ListNode {
         return numLinkList.next;
     }
 
+    /**
+     * print a LinkList
+     * @param listNode
+     */
     public static void printListNode(ListNode listNode){
         if (null==listNode) {System.out.println("empty ListNode");return;}
         System.out.print("The ListNode is: ");
@@ -54,6 +58,13 @@ public class ListNode {
             listNode=listNode.next;
         }
         System.out.println();
+    }
+
+    /**
+     * invoke this.printListNode
+     */
+    public void displayMyself () {
+        printListNode(this);
     }
 
 }
