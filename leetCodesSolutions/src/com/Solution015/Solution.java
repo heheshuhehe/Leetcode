@@ -21,33 +21,34 @@ public class Solution {
         List<List<Integer>> results =new ArrayList<>();
         nums = Arrays.stream(nums).sorted().toArray();
         System.out.println(Arrays.toString(nums));
-        int k=0,pointer=nums.length-1;
-        for (int i=0;i<=nums.length-3;i++){
+        int k=nums.length-1;
+        for (int i=0;i<=nums.length-3 && nums[i]<=0;i++){
             if (i>0 && nums[i]==nums[i-1] ) continue;
-            for (int j=i+1;j<=nums.length-2;j++){
-                if (  j!=i+1&&nums[j]==nums[j-1]) continue;
-                for (k=pointer;k>j;k--){
-                    if (k!=nums.length-1 && nums[k]==nums[k+1]) continue;
+            int j = i+1;
+            k = nums.length-1;
+                while (k>j){
                     printInfo(i,j,k,nums);
-                    if (nums[i]+nums[j]+nums[k] == 0 ){
-                        List <Integer> pairs= new ArrayList<>();
-                        pairs.add(nums[i]);
-                        pairs.add(nums[j]);
-                        pairs.add(nums[k]);
-                        results.add(pairs);
-                        pointer=k;
-                        break;
+                    if (j!=i+1 && nums[j]==nums[j-1]) {j++;continue;}
+                    if (k!=nums.length-1 && nums[k]==nums[k+1]) {k--;continue;}
+                    if ( nums[i]+nums[j]+nums[k]<0){
+                        j++;
                     }
+                    else if ( nums[i]+nums[j]+nums[k]>0){
+                        k--;
+                    }else {
+                        results.add(Arrays.asList(nums[i],nums[j],nums[k]));
+                        j++;k--;
+                    }
+
                 }
-                pointer =nums.length-1;
             }
-        }
         return results;
     }
 
     private void printInfo(int i, int j, int k, int[] nums) {
         System.out.println("i:"+i+", j:"+j+", k:"+k+
-                        ", num[i]:"+nums[i]+", num[j]:"+nums[j]+", num[k]:"+nums[k]
+                        ", num[i]:"+nums[i]+", num[j]:"+nums[j]+", num[k]:"+nums[k]+
+                        ", sum is "+ (nums[i]+nums[j]+nums[k])
 //                        ", sum^3 is:"+(nums[i]*nums[i]*nums[i]+nums[j]*nums[j]*nums[j]+nums[k]*nums[k]*nums[k])
                         );
     }
