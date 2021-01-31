@@ -5,17 +5,24 @@ import com.Solution021.Solution;
 import util.constants;
 
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class entrance {
+
+
     /**
      *
      * @param args
      */
-    public static void main(String[] args) {
-        String testString = readFileByChars("021.txt");
-        com.Solution021.Solution solution = new com.Solution021.Solution();
-        System.out.println("the result of "+solution.getClass().getName()+ " is ");
-        solution.start(testString);
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
+        String testString = readFileByChars("015.txt");
+        Class<?> clazz = Class.forName("com.Solution015.Solution");
+//        com.Solution015.Solution solution = new com.Solution015.Solution();
+        Method startMethod = clazz.getMethod("start", String.class);
+        startMethod.invoke(clazz.newInstance(), testString);
+        //System.out.println("the result of "+solution.getClass().getName()+ " is ");
+        //solution.start(testString);
 
 //        System.out.println("The solution of the problem is " +  new Solution002(testString));
     }
@@ -30,11 +37,11 @@ public class entrance {
     public static
     String readFileByChars(String fileName) {
 
-        System.out.println("path is "+System.getProperty(
-                "user.dir"));
+        System.out.println("Reading test case path is "+System.getProperty(
+                "user.dir")+ constants.MACTESTCASESPATH+fileName);
         String realFilename = System.getProperty(
                 "user.dir")+constants.MACTESTCASESPATH+fileName;
-
+        System.out.print("testCase content is: ");
         File file = new File(realFilename);
         Reader reader = null;
         StringBuilder resultString = new StringBuilder("");
