@@ -1,12 +1,10 @@
 package com.entrance;
 
-import com.Solution042.Solution042;
-import com.Solution021.Solution;
 import util.constants;
 
 import java.io.*;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 public class entrance {
 
@@ -16,15 +14,12 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
-        String testString = readFileByChars("015.txt");
-        Class<?> clazz = Class.forName("com.Solution015.Solution");
+        String testString = readFileByChars("053.txt");
+        Class<?> clazz = Class.forName("com.Solution053.Start");
 //        com.Solution015.Solution solution = new com.Solution015.Solution();
-        Method startMethod = clazz.getMethod("start", String.class);
-        startMethod.invoke(clazz.newInstance(), testString);
-        //System.out.println("the result of "+solution.getClass().getName()+ " is ");
-        //solution.start(testString);
-
-//        System.out.println("The solution of the problem is " +  new Solution002(testString));
+        Constructor constructorStart = clazz.getConstructor(String.class);
+//        Method startMethod = clazz.getMethod("Start", String.class);
+        constructorStart.newInstance( testString);
     }
 
 
