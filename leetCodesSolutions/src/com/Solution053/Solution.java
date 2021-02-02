@@ -8,6 +8,7 @@ public class Solution {
             currentSum=Math.max(currentSum+nums[i],nums[i]);
             max=Math.max(currentSum,max);
 //            System.out.println(", max=Math.max(max+nums[i],nums[i])is "+ max);
+
         }
         return max;
     }
