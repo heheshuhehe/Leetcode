@@ -11,6 +11,7 @@ public class Start {
         //System.out.println("The array is "+ Arrays.toString(testNumArray));
         Class<?> clazz = Class.forName(this.getClass().getName().replace("Start","Solution"));
         Method sameNameWithLeetcodeMethod = clazz.getMethod("isValid", String.class);
-        sameNameWithLeetcodeMethod.invoke(clazz.getConstructor().newInstance(), testCase);
+        Object result =sameNameWithLeetcodeMethod.invoke(clazz.getConstructor().newInstance(), testCase);
+        System.out.println("The result of Question is "+result.toString());
     };
 }

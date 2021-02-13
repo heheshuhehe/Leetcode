@@ -1,28 +1,40 @@
 package com.Solution020;
 
+
+import java.util.Stack;
+
 public class Solution {
         public Boolean isValid (String testCase){
             char target;
-            int bracket=0,mediumBracket=0,largeBracket=0;
+            if (testCase==null||testCase.length()%2!=0)return false;
+            Stack <Character> reading = new Stack<>();
             for (int i=0;i<testCase.length();i++) {
                 target = testCase.charAt(i);
-                switch (target) {
-                    case '(':
-                        bracket++;
-                    case '{':
-                        mediumBracket++;
-                    case '[':
-                        largeBracket++;
-                    case ')':
-                        if (--bracket<0) return false;
-                    case '}':
-                        if (--mediumBracket<0) return false;
-                    case ']':
-                        if (--largeBracket<0) return false;
-                    default:
-                        return false;
+//                System.out.println("target is "+target);
+                if (target == '(' || target == '[' || target =='{'){
+//                    System.out.println("pushing "+target);
+                    reading.push(target);
+                } else {
+                    switch (target){
+                        case ')':{
+                            if (reading.size()<1||reading.pop()!='(') return false;
+                            break;
+                        }
+                        case ']':{
+                            if (reading.size()<1||reading.pop()!='[') return false;
+                            break;
+                        }
+                        case '}':{
+                            if (reading.size()<1||reading.pop()!='{') return false;
+                            break;
+                        }
+                        default:{
+                            return false;
+                        }
+                    }
                 }
             }
+            if (reading.size()!=0)return false;
             return true;
         }
 }
