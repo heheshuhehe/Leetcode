@@ -1,10 +1,15 @@
 package com.entrance;
 
+import com.DataStructure.TreeNode;
 import util.constants;
 
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class entrance {
 
@@ -14,12 +19,12 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
-        String testString = readFileByChars("020.txt");
-        Class<?> clazz = Class.forName("com.Solution020.Start");
-//        com.Solution015.Solution solution = new com.Solution015.Solution();
+        String testString = readFileByChars("501.txt");
+        Class<?> clazz = Class.forName("com.Solution501.Start");
+        TreeNode treeNode = new TreeNode();
+        treeNode=treeNode.parseStringToTreeNode(testString);
         Constructor constructorStart = clazz.getConstructor(String.class);
-//        Method startMethod = clazz.getMethod("Start", String.class);
-        constructorStart.newInstance( testString);
+        constructorStart.newInstance(testString);
     }
 
 
