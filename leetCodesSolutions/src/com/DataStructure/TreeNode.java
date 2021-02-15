@@ -9,19 +9,24 @@ import java.util.*;
  * Definition for a binary tree node.
  */
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(int x) { val = x; }
     public TreeNode(){};
 
+    /**
+     * return a TreeNode from a testCase
+     * @param testString
+     * @return
+     */
     public TreeNode parseStringToTreeNode (String testString) {
         String[] splitedString = testString.split(",");
         List<Integer> listInteger = new LinkedList<Integer>();
         for (String instance :Arrays.asList(splitedString)){
             listInteger.add(("".equals(instance) || "null".equals(instance))?null:Integer.valueOf(instance));
         }
-        System.out.println("the list is "+listInteger.toString());
+//        System.out.println("the list is "+listInteger.toString());
         return buildListToTreeNode(listInteger);
     }
         /**
@@ -36,6 +41,8 @@ public class TreeNode {
         return buildListToTreeNode(list, 1);
     }
 
+
+
     /**
      * parse a List to TreeNode
      * @param list
@@ -44,7 +51,7 @@ public class TreeNode {
      */
      public TreeNode buildListToTreeNode (List<Integer> list,Integer count){
         if (count-1>=list.size() || list.get(count-1)==null) return null;
-        System.out.println("count is " + count + "  list.(count-1) = " + list.get(count-1));
+//        System.out.println("count is " + count + "  list.(count-1) = " + list.get(count-1));
         TreeNode newNode = new TreeNode(list.get(count-1));
         newNode.val = list.get(count-1);
         newNode.left=buildListToTreeNode (list, count*2);
@@ -66,14 +73,33 @@ public class TreeNode {
         int counter=0;
         while(!queue.isEmpty()){
             TreeNode tree=queue.poll();
-            System.out.print(tree.val+", ");
-            if(tree.left!=null)
+            if(tree.left!=null) {
                 queue.offer(tree.left);
-            if(tree.right!=null)
+            }
+            if(tree.right!=null) {
                 queue.offer(tree.right);
+            }
+            System.out.print(tree.val+", ");
             lists.add(tree.val);
         }
+        System.out.println();
         return lists;
+    }
+
+    /**
+     * build leetCode type tree
+     * @param list
+     * @param count
+     * @return
+     */
+    public TreeNode buildListToLeetCodeTreeNode (List<Integer> list,Integer count){
+        if (count-1>=list.size() || list.get(count-1)==null) return null;
+//        System.out.println("count is " + count + "  list.(count-1) = " + list.get(count-1));
+        TreeNode newNode = new TreeNode(list.get(count-1));
+        newNode.val = list.get(count-1);
+        newNode.left=buildListToTreeNode (list, count*2);
+        newNode.right=buildListToTreeNode (list, count*2+1);
+        return newNode;
     }
 }
 
