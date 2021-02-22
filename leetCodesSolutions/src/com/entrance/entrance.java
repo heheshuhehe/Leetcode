@@ -19,8 +19,8 @@ public class entrance {
      * @param args
      */
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
-        String testString = readFileByChars("239.txt");
-        Class<?> clazz = Class.forName("com.Solution239.Start");
+        String testString = readFileByChars("649.txt");
+        Class<?> clazz = Class.forName("com.Solution649.Start");
         Constructor constructorStart = clazz.getConstructor(String.class);
         constructorStart.newInstance(testString);
     }
