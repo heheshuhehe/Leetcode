@@ -1366,12 +1366,17 @@
                   </entry>
                   <entry key="Application">
                     <value>
-                      <FeaturePluginData displayName="Codeforces" pluginName="EduTools" pluginId="com.jetbrains.edu" />
+                      <FeaturePluginData displayName="Application" pluginName="Java" pluginId="com.intellij.java" />
                     </value>
                   </entry>
                   <entry key="BSP_TEST_RUN_CONFIGURATION">
                     <value>
                       <FeaturePluginData displayName="BSP test" pluginName="Scala" pluginId="org.intellij.scala" />
+                    </value>
+                  </entry>
+                  <entry key="Codeforces">
+                    <value>
+                      <FeaturePluginData displayName="Codeforces" pluginName="EduTools" pluginId="com.jetbrains.edu" />
                     </value>
                   </entry>
                   <entry key="CompoundRunConfigurationType">
